@@ -6,32 +6,19 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/18 17:29:33 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/19 13:30:55 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	args_check(int argc, char *argv[])
-{
-	if (argc < 2) // if only ./push_swap is input return
-		return (1);
-	return (0);
+//boolians?
 
-	while (1 < argc)
-	{
-		
-	}
-	return ();
-}
-
-int	
-
-int has_duplicate(t_node *head, int value)
+int has_duplicate(t_node *head, int value) // head points to first node
 {
 	while (head)
 	{
-		if (head->value == value)
+		if (head->value == value) // check value in node with given value, move through whole list
 			return (1); // Duplicate found
 		head = head->next;
 	}

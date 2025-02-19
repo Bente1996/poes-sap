@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   little_ones.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 17:00:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/19 11:53:45 by bde-koni         ###   ########.fr       */
+/*   Created: 2025/02/19 16:16:11 by bde-koni          #+#    #+#             */
+/*   Updated: 2025/02/19 16:23:20 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	klein(t_node **stack_a, t_node **stack_b)
 {
-	t_node	*list;
-
-	list = NULL;
-	if (argc < 2) // if only ./push_swap is input return
-		return (1);
-
-
-		
-	return (0);
+	if (stack_a == NULL || stack_b == NULL)
+		return;
+	while (*stack_b)
+	{
+		if ((*stack_b))
+	}
 }

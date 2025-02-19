@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:37:09 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/18 17:13:11 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/19 13:31:18 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef struct s_node
 {
-	long long value;
-	int sorted_index;
+	int value;
+	int index_sorted;
 	struct s_node *next;
 }
 t_node;
@@ -30,8 +30,8 @@ int	main(int argc, char *argv[]);
 int has_duplicate(t_node *head, int value);
 int	is_number(char *str);
 t_node *parse_input(int argc, char **argv);
-t_node *new_node(long long value);
-void append_node(t_node **head, long long value);
+t_node *new_node(int value);
+void append_node(t_node **head, int value);
 void pa(t_node **stack_a, t_node **stack_b);
 void pb(t_node **stack_a, t_node **stack_b);
 void	ra(t_node **stack_a);

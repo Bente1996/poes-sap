@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 17:07:12 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/18 18:12:19 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/19 15:16:48 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,17 +155,6 @@ void	rrr(t_node **stack_a, t_node **stack_b)
 	rrb(stack_b);
 }
 
-// t_node	*new_node(int number, size_t index)
-// {
-// 	t_node *node = (t_node *)malloc(sizeof(t_node)); //allocate new node
-// 	if (!node)
-// 		return (NULL);
-// 	node->value = number; // in node: make value number
-// 	//node->index = index;
-// 	node->sorted_index;
-// 	node->next = NULL; // in node: make next point to NULL
-// 	return (node);
-// }
 
 // size_t	*bubble_sort(t_node **stack_a, size_t sorted_index)
 // {
@@ -202,7 +191,7 @@ void bubble_sort(t_node **head) {
         return;
     
     int swapped;
-    t_node *ptr1;
+    t_node *ptr1; // compares adjacent nodes
     t_node *lptr = NULL; // Marks the portion already sorted
 
     do {
@@ -257,39 +246,26 @@ int	is_number(char *str)
 	return (1);
 }
 
-// void append_node(t_node **head, int number, size_t index)
-// {
-// 	if (has_duplicate(*head, number))  // Check for duplicates before adding
-// 	{
-// 		printf("Error: Duplicate number found: %d\n", number);
-// 		exit(1); // Exit the program with an error
-// 	}
+void append_node(t_node **head, int number, size_t index)
+{
+	if (has_duplicate(*head, number))  // Check for duplicates before adding
+	{
+		printf("Error: Duplicate number found: %d\n", number);
+		exit(1); // Exit the program with an error
+	}
 	
-// 	t_node *new = new_node(number, index); // we make a node
-// 	if (!new)
-// 		return; //free
-// 	if (*head == NULL)  // If the list is empty, set head to new node
-// 		*head = new; // head will point to new node now
-// 	else 
-// 	{
-// 		t_node *temp = *head; // if there already was a node, temp point to the same node as head
-// 		while (temp->next) // Find the last node 
-// 			temp = temp->next;
-// 		temp->next = new; // Attach the new node at the end (temp->next == NULL)
-// 	}
-// }
-
-// Create a new node
-t_node *new_node(long long value) {
-    t_node *node = malloc(sizeof(t_node));
-    if (!node) {
-        perror("malloc failed");
-        exit(EXIT_FAILURE);
-    }
-    node->value = value;
-    node->sorted_index = -1; // Default index before normalization
-    node->next = NULL;
-    return node;
+	t_node *new = new_node(number, index); // we make a node
+	if (!new)
+		return; //free
+	if (*head == NULL)  // If the list is empty, set head to new node
+		*head = new; // head will point to new node now
+	else 
+	{
+		t_node *temp = *head; // if there already was a node, temp point to the same node as head
+		while (temp->next) // Find the last node 
+			temp = temp->next;
+		temp->next = new; // Attach the new node at the end (temp->next == NULL)
+	}
 }
 
 // Append a node to the end of the list
@@ -304,6 +280,33 @@ void append_node(t_node **head, long long value) {
         temp = temp->next;
     temp->next = node;
 }
+
+
+t_node	*new_node(int number, size_t index)
+{
+	t_node *node = (t_node *)malloc(sizeof(t_node)); //allocate new node
+	if (!node)
+		return (NULL);
+	node->value = number; // in node: make value number
+	//node->index = index;
+	node->sorted_index;
+	node->next = NULL; // in node: make next point to NULL
+	return (node);
+}
+
+// Create a new node
+t_node *new_node(long long value) {
+    t_node *node = malloc(sizeof(t_node));
+    if (!node) {
+        perror("malloc failed");
+        exit(EXIT_FAILURE);
+    }
+    node->value = value;
+    node->sorted_index = -1; // Default index before normalization
+    node->next = NULL;
+    return node;
+}
+
 
 long int	ft_atoi(const char *str)
 {
