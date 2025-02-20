@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/20 16:26:39 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:02:41 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@ int	main(int argc, char *argv[])
 	list = NULL;
 	if (argc < 2) // if only ./push_swap is input return
 		return (1);
-
-	parse_input();
-	small_sort();
-	bubble_sort();
-	radix_sort();
-		
+	
+	list = parse_input(argc, argv);
+	// print_list(list);
+	// small_sort();
+	bubble_sort(&list); // make list ready for sorted indeces
+	// print_list(list);
+	sorted_indices(list); // assign sorted indeces to list
+	print_list(list);
+	bubble_unsort(&list); // values back to original, normalized and ready for radix
+	// radix_sort(); // use operations to sort
+	free_list(list);
 	return (0);
 }
