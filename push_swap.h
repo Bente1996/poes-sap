@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:37:09 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/19 13:31:18 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:26:57 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 typedef struct s_node
 {
 	int value;
-	int index_sorted;
+	size_t	index;
+	ssize_t	sorted_index;
 	struct s_node *next;
 }
 t_node;
@@ -30,12 +31,12 @@ int	main(int argc, char *argv[]);
 int has_duplicate(t_node *head, int value);
 int	is_number(char *str);
 t_node *parse_input(int argc, char **argv);
-t_node *new_node(int value);
-void append_node(t_node **head, int value);
+t_node *new_node(int value, size_t index);
+void append_node(t_node **head, int value, size_t index);
 void pa(t_node **stack_a, t_node **stack_b);
 void pb(t_node **stack_a, t_node **stack_b);
 void	ra(t_node **stack_a);
-void	radix(t_node **stack_a, t_node **stack_b);
+void	radix_sort(t_node **stack_a, t_node **stack_b);
 int	find_max_bits(t_node *stack_a);
 size_t	stack_size(t_node *stack_a);
 void bubble_sort(t_node **head);

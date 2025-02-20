@@ -6,13 +6,13 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/18 17:12:45 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:26:47 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix(t_node **stack_a, t_node **stack_b)
+void	radix_sort(t_node **stack_a, t_node **stack_b) // change (*stack_a)-> value to ->index
 {
 	size_t	max_bits;
 	size_t	bit_position;

@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:51 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/19 13:57:28 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:03:31 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_node *parse_input(int argc, char **argv)
 	{
 		if (is_number(argv[i]) == 1) // as long as we only find valid numbers (input as string)
 		{
-			append_node(&stack_a, ft_atoi(argv[i])); // Convert ton int and store numbers in nodes
+			append_node(&stack_a, ft_atoi(argv[i]), i); // Convert ton int and store numbers in nodes
 			if (!stack_a)
 			{
 				free_list(); // ?
