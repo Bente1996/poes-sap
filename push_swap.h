@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:37:09 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/20 17:41:19 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:29:30 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_node *parse_input(int argc, char **argv);
 int has_duplicate(t_node *head, int value);
 int	is_number(char *str);
 t_node *new_node(int value, size_t index);
-void append_node(t_node **head, int value, size_t index);
+t_node *append_node(t_node **head, int value, size_t index);
 void bubble_sort(t_node **head);
 void swap_values(t_node *a, t_node *b);
 void sorted_indices(t_node *head);

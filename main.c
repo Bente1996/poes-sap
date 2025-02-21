@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/20 19:02:41 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:52:38 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	main(int argc, char *argv[])
 	t_node	*list;
 
 	list = NULL;
-	if (argc < 2) // if only ./push_swap is input return
-		return (1);
 	
 	list = parse_input(argc, argv);
 	// print_list(list);

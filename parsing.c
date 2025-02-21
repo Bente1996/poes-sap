@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:51 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/20 19:09:13 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:53:12 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,23 @@ t_node *parse_input(int argc, char **argv)
 	i = 1; // Start from 1 because argv[0] is the program name
 	value = 0;
 	stack_a = NULL; // stack_a starts empty
+	if (argc < 2) // if only ./push_swap is input return
+		return (NULL);
 	while (i < argc) // loop through all the arguments
 	{
-		if (is_number(argv[i]) == 1) // as long as we only find valid numbers (input as string)
-		{
-			append_node(&stack_a, ft_atoi(argv[i]), i - 1); // Convert to int and store numbers in nodes
-			if (!stack_a)
-			{
-				// free_list(); // ?
-				return (NULL);
-			}
-			ft_printf("%d\n", i); // print unsorted index
-			i++;
-		}
+		printf("Parsing argument %d: \"%s\"\n", i, argv[i]); // Debug: Print input as string
+    	if (is_number(argv[i]) == 1) 
+    	{
+        int num = ft_atoi(argv[i]);
+        printf("Converted to integer: %d\n", num); // Debug: Check conversion result
+            if (!append_node(&stack_a, ft_atoi(argv[i]), i - 1)) // Pass i-1 as index
+            {
+                free_list(stack_a);
+                return (NULL);
+            }
+            ft_printf("Index: %d, Value: %d\n", i - 1, ft_atoi(argv[i])); // Debug print
+            i++;
+        }
 		else
 		{
 			printf("Error: Invalid integer found: %s\n", argv[i]);
@@ -43,27 +47,46 @@ t_node *parse_input(int argc, char **argv)
 	return (stack_a);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str) // pas aan in libft/ printf
 {
 	int i = 0;
 	int sign = 1;
 	long long result = 0;
 
+	// Skip whitespace
 	while ((str[i] == ' ') || (str[i] == '\f') || (str[i] == '\n')
 		|| (str[i] == '\r') || (str[i] == '\t') || (str[i] == '\v'))
 		i++;
-	if (str[i] == '-')
-		sign *= -1;
-	i++;
+
+	// Handle sign
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+
+	// Convert digits to integer
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = (str[i] - '0') + (10 * result);
+		result = result * 10 + (str[i] - '0');
+
+		// Check for overflow
 		if (result > INT_MAX)
 		{
-			ft_printf("Error: Found overflow \n");
+			printf("Error: Found overflow\n");
 			exit(1);
 		}
 		i++;
 	}
-	return (result * sign);
+
+	// Apply sign and check for INT_MIN
+	result *= sign;
+	if (result < INT_MIN)
+	{
+		printf("Error: Found underflow\n");
+		exit(1);
+	}
+
+	return ((int)result);
 }

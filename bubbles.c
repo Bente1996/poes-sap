@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:15 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/20 18:10:12 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:59:21 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ void	bubble_unsort(t_node **head) // bubble sort based on index instead of value
 void swap_values(t_node *a, t_node *b)
 {
 	t_node	*temp;
+
+	if (a == NULL || b == NULL)
+    {
+        printf("Error: Attempted to swap NULL nodes.\n");
+        return;
+    }
 
 	temp = NULL;
 	temp->value = a->value;
