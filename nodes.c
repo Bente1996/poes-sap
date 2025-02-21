@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:06:24 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/21 11:57:28 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:12:58 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@
 // 	return (new);
 // }
 
-t_node *append_node(t_node **head, int value, size_t index)
+t_node *append_node(t_node **head, int value, int index)
 {
     t_node *new = malloc(sizeof(t_node));
     if (!new)
@@ -68,7 +68,7 @@ t_node *append_node(t_node **head, int value, size_t index)
     new->sorted_index = -1;
     new->next = NULL;
 
-    printf("Appending node: Value=%d, Index=%zu\n", value, index);
+    printf("Appending node: Value=%d, Index=%d\n", value, index);
 
     if (!(*head))
         *head = new;

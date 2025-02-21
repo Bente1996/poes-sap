@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:51 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/21 11:53:12 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:12:44 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@ t_node *parse_input(int argc, char **argv)
 		return (NULL);
 	while (i < argc) // loop through all the arguments
 	{
-		printf("Parsing argument %d: \"%s\"\n", i, argv[i]); // Debug: Print input as string
     	if (is_number(argv[i]) == 1) 
     	{
-        int num = ft_atoi(argv[i]);
-        printf("Converted to integer: %d\n", num); // Debug: Check conversion result
             if (!append_node(&stack_a, ft_atoi(argv[i]), i - 1)) // Pass i-1 as index
             {
                 free_list(stack_a);

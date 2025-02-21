@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/21 11:52:38 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:15:24 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int argc, char *argv[])
 	sorted_indices(list); // assign sorted indeces to list
 	print_list(list);
 	bubble_unsort(&list); // values back to original, normalized and ready for radix
+	print_list(list);
 	// radix_sort(); // use operations to sort
 	free_list(list);
 	return (0);

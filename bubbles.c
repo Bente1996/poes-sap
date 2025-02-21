@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:15 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/21 11:59:21 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:19:23 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	bubble_unsort(t_node **head) // bubble sort based on index instead of value
 			if (compare->index > compare->next->index)
 			{
 				swap_values(compare, compare->next);
+				swap_sorted_indeces(compare, compare->next);
 				swapped = 1;
 			}
 			compare = compare->next;
@@ -66,23 +67,60 @@ void	bubble_unsort(t_node **head) // bubble sort based on index instead of value
 	}
 }
 
-void swap_values(t_node *a, t_node *b)
+void	swap_sorted_indeces(t_node *a, t_node *b)
 {
-	t_node	*temp;
+	t_node *temp;                             // hoeft dit niet bij de ANDERE temps??
 
-	if (a == NULL || b == NULL)
+    if (a == NULL || b == NULL)
     {
         printf("Error: Attempted to swap NULL nodes.\n");
         return;
     }
 
-	temp = NULL;
-	temp->value = a->value;
-	a->value = b->value;
-	b->value = temp->value;
-	temp->index = a->index;
-	a->index = b->index;
-	b->index = temp->index; 
+    temp = malloc(sizeof(t_node));  // Allocate memory for temp
+    if (temp == NULL)
+    {
+        printf("Memory allocation failed!\n");
+        return;  // Exit the function if allocation fails
+    }
+
+    temp->value = a->value;
+    a->value = b->value;
+    b->value = temp->value;
+
+    temp->sorted_index = a->sorted_index;
+    a->sorted_index = b->sorted_index;
+    b->sorted_index = temp->sorted_index; 
+
+    free(temp);  // Free temp after use
+}
+
+void swap_values(t_node *a, t_node *b)
+{
+    t_node *temp;
+
+    if (a == NULL || b == NULL)
+    {
+        printf("Error: Attempted to swap NULL nodes.\n");
+        return;
+    }
+
+    temp = malloc(sizeof(t_node));  // Allocate memory for temp
+    if (temp == NULL)
+    {
+        printf("Memory allocation failed!\n");
+        return;  // Exit the function if allocation fails
+    }
+
+    temp->value = a->value;
+    a->value = b->value;
+    b->value = temp->value;
+
+    temp->index = a->index;
+    a->index = b->index;
+    b->index = temp->index; 
+
+    free(temp);  // Free temp after use
 }
 
 void sorted_indices(t_node *head)

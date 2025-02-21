@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:29 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/20 18:19:21 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:14:05 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_list(t_node *head)
 {
 	while (head)
 	{
-		ft_printf("Value: %d, Index: %zd Sorted Index: %zd\n", head->value, head->index, head->sorted_index);
+		ft_printf("Value: %d, Index: %d Sorted Index: %d\n", head->value, head->index, head->sorted_index);
 		head = head->next;
 	}
 }
