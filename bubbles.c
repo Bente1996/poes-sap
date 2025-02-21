@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:15 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/21 12:19:23 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:25:13 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	bubble_unsort(t_node **head) // bubble sort based on index instead of value
 
 void	swap_sorted_indeces(t_node *a, t_node *b)
 {
-	t_node *temp;                             // hoeft dit niet bij de ANDERE temps??
+	t_node *temp;                             // hoeft dit niet bij de ANDERE temps??: nee , we bewaren hier alle data van node en niet alleen pointer. zoek beter uit
 
     if (a == NULL || b == NULL)
     {

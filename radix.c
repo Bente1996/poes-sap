@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/20 16:26:47 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:29:06 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	radix_sort(t_node **stack_a, t_node **stack_b) // change (*stack_a)-> value
 		elements = 0;
 		while (elements < size) // ga elementen af
 		{
-			if ((((*stack_a)->value >> bit_position) & 1) == 0) // check steeds laatste digit door steeds meer te verschuiven, kijk de hele tijd naar head
+			if ((((*stack_a)->sorted_index >> bit_position) & 1) == 0) // check steeds laatste digit door steeds meer te verschuiven, kijk de hele tijd naar head
 				pb(stack_a, stack_b); // als het 0 is, push naar stapel B
 			else
 				ra(stack_a); // anders zet onderaan A
@@ -48,8 +48,8 @@ int	find_max_bits(t_node *stack_a)
 	max_bits = 0;
 	while (stack_a)
 	{
-		if (stack_a->value > max) //wanneer we in een node een hogere value vinden
-			max = stack_a->value; // benoem een nieuwe max value
+		if (stack_a->sorted_index > max) //wanneer we in een node een hogere sorted_index vinden
+			max = stack_a->sorted_index; // benoem een nieuwe max value
 		stack_a = stack_a->next; // move to next node and check again untill stack_a (stack_a) is checked
 	}
 	while ((max >> max_bits) > 0) // shifts max , max_bits positions to the right (starts at max in binary and ends when there are only 0's left)
