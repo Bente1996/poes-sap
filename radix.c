@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/21 17:29:06 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:33:05 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	radix_sort(t_node **stack_a, t_node **stack_b) // change (*stack_a)-> value
 {
 	size_t	max_bits;
 	size_t	bit_position;
-	size_t	size;
-	size_t	elements;
+	int	size;
+	int	elements;
 	
 	max_bits = find_max_bits(*stack_a);
 	bit_position = 0;
@@ -55,17 +55,4 @@ int	find_max_bits(t_node *stack_a)
 	while ((max >> max_bits) > 0) // shifts max , max_bits positions to the right (starts at max in binary and ends when there are only 0's left)
 		max_bits++;
 	return (max_bits); // max in binary digits
-}
-
-size_t	stack_size(t_node *stack_a)
-{
-	size_t	size;
-
-	size = 0;
-	while (stack_a)
-	{
-		size++;
-		stack_a = stack_a->next;
-	}
-	return (size);
 }

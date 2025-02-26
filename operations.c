@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/19 13:16:59 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:17:12 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,18 @@ void pb(t_node **stack_a, t_node **stack_b) //put first element A on top of B
 	*stack_b = temp; // B's head now points to the new node
 }
 
+void sa(t_node **stack_a)
+{
+	if (!*stack_a || !(*stack_a)->next)
+		return;
+	t_node *first = *stack_a;
+	t_node *second = (*stack_a)->next;
+	
+	first->next = second->next;
+	second->next = (*stack_a);
+	*stack_a = second;
+}
+
 void	ra(t_node **stack_a)
 {
 	if (!*stack_a || !(*stack_a)->next)
@@ -48,4 +60,23 @@ void	ra(t_node **stack_a)
 	*stack_a = first->next; // make new head
 	last->next = first;
 	first->next = NULL;
+}
+
+void	rra(t_node **stack_a)
+{
+	if (!*stack_a || !(*stack_a)->next)
+		return;
+	
+	t_node *second_last = *stack_a;
+	t_node *last = *stack_a;
+
+	while (last->next) // look for last node
+	{	
+		second_last = last;
+		last = last->next;
+	}
+	
+	second_last->next = NULL; 
+	last->next = *stack_a;
+	*stack_a = last;
 }

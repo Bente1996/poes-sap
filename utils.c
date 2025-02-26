@@ -6,13 +6,12 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:29 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/21 12:14:05 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/26 15:33:00 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Print the list (both value and sorted index)
 void	print_list(t_node *head)
 {
 	while (head)
@@ -20,9 +19,9 @@ void	print_list(t_node *head)
 		ft_printf("Value: %d, Index: %d Sorted Index: %d\n", head->value, head->index, head->sorted_index);
 		head = head->next;
 	}
+	ft_printf("\n");
 }
 
-// Free the linked list
 void free_list(t_node *head)
 {
 	t_node *temp;
@@ -33,4 +32,17 @@ void free_list(t_node *head)
 		head = head->next;
 		free(temp);
 	}
+}
+
+int	stack_size(t_node *stack_a)
+{
+	int	size;
+
+	size = 0;
+	while (stack_a)
+	{
+		size++;
+		stack_a = stack_a->next;
+	}
+	return (size);
 }

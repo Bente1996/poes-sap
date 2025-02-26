@@ -4,13 +4,15 @@ SRCFILES := main.c \
 parsing.c \
 nodes.c \
 operations.c \
+little_ones.c \
+selection_sort.c \
 checks.c \
 radix.c \
 bubbles.c \
 utils.c
 
 OBJFILES := $(SRCFILES:.c=.o)
-CFLAGS ?= -Wall -Wextra -Werror -I./ft_printf/Libft -I./ft_printf ##-fsanitize=address
+CFLAGS ?= -Wall -Wextra -Werror -I./ft_printf/Libft -I./ft_printf ##-fsanitize=Address ???
 FT_PRINTF_A := ft_printf/libftprintf.a
 
 all : $(EXEC_NAME)
