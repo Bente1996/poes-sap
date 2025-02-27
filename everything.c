@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 17:07:12 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 17:10:22 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:39:04 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -493,6 +493,30 @@ int main(int argc, char *argv[]) {
     
     return 0;
 }
+
+// void	three(t_node **stack_a)  // sa ra rra
+// {
+// 	if (*stack_a == NULL)
+// 		return;
+// 	if (((*stack_a)->value > (*stack_a)->next->value) && \
+// 		((*stack_a)->next->value > (*stack_a)->next->next->value)) // 321,  als eertse groter is dan tweede, en tweede groter dan derde
+// 	{
+// 		ra(stack_a);
+// 		sa(stack_a);
+// 	}
+// 	if (((*stack_a)->value > (*stack_a)->next->value) && \
+// 		(*stack_a)->next->value < (*stack_a)->next->next->value) // 312, als eertse groter is dan tweede, en tweede kleiner dan derde
+// 		ra(stack_a);
+// 	if (((*stack_a)->value < (*stack_a)->next->value) && ((*stack_a)->next->next->value < (*stack_a)->value)) // 231, eerste kleiner dan tweede, en derde kleiner dan eerste
+// 		rra(stack_a);
+// 	if (((*stack_a)->value > (*stack_a)->next->value) && ((*stack_a)->next->next->value > (*stack_a)->value)) // 213, eerste groter dan tweede, en derde groter dan eerste 
+// 		sa(stack_a);
+// 	if (((*stack_a)->value < (*stack_a)->next->next->value) && ((*stack_a)->next->next->value < (*stack_a)->next->value)) // 132, als eerste kleiner dan derde en derde kleiner dan tweede
+// 	{
+// 		rra(stack_a);
+// 		sa(stack_a);
+// 	}
+// }
 
 // void	four_five(t_node **stack_a, t_node **stack_b)
 // {

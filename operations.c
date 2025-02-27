@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 15:58:25 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 18:23:47 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void pa(t_node **stack_a, t_node **stack_b) // put first element B on top of A
 	*stack_b = (*stack_b)->next; // Move B's head forward
 	temp->next = *stack_a;		 // Attach B's old head to A
 	*stack_a = temp;			 // A's head now points to the new node
+	ft_printf("pa \n");
+	count_operations();
 }
 
 void pb(t_node **stack_a, t_node **stack_b) // put first element A on top of B
@@ -43,37 +45,9 @@ void pb(t_node **stack_a, t_node **stack_b) // put first element A on top of B
 		temp->next = *stack_b; // Attach old head of A to stack B
 		*stack_b = temp;	   // Move stack B head to new node
 	}
+	ft_printf("pb \n");
+	count_operations();
 }
-
-// void pb(t_node **stack_a, t_node **stack_b) // Put first element A on top of B
-// {
-//     if (stack_a == NULL)
-//     {
-//         printf("Error: stack_a is NULL\n");
-//         return;
-//     }
-//     if (*stack_a == NULL)
-//     {
-//         printf("Error: *stack_a is NULL (empty stack)\n");
-//         return;
-//     }
-
-//     printf("Before pb: stack_a head = %d\n", (*stack_a)->value);
-
-//     t_node *temp = *stack_a; // Store the first node of A in temp
-//     *stack_a = (*stack_a)->next; // Move A's head to next node
-
-//     temp->next = *stack_b; // Attach A's old head (temp) to B
-//     *stack_b = temp; // B's head now points to the new node
-
-//     if (*stack_a)
-//         printf("After pb: new stack_a head = %d\n", (*stack_a)->value);
-//     else
-//         printf("After pb: stack_a is now empty\n");
-
-//     if (*stack_b)
-//         printf("After pb: new stack_b head = %d\n", (*stack_b)->value);
-// }
 
 void sa(t_node **stack_a)
 {
@@ -85,6 +59,8 @@ void sa(t_node **stack_a)
 	first->next = second->next;
 	second->next = (*stack_a);
 	*stack_a = second;
+	ft_printf("sa \n");
+	count_operations();
 }
 
 void ra(t_node **stack_a)
@@ -101,6 +77,8 @@ void ra(t_node **stack_a)
 	*stack_a = first->next; // make new head
 	last->next = first;
 	first->next = NULL;
+	ft_printf("ra \n");
+	count_operations();
 }
 
 void rra(t_node **stack_a)
@@ -120,4 +98,6 @@ void rra(t_node **stack_a)
 	second_last->next = NULL;
 	last->next = *stack_a;
 	*stack_a = last;
+	ft_printf("rra \n");
+	count_operations();
 }

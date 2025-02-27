@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 16:09:22 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 18:30:25 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,45 +21,18 @@ int	main(int argc, char *argv[])
 	list = parse_input(argc, argv);
 	if (list == NULL)
 		return (-1);
-	ft_printf("Parsed input:\n");
+	ft_printf("Parsed list:\n");
 	print_list(list);
+	if (is_already_sorted(list) == 1)
+	{
+		ft_printf("Error: List was already sorted \n");
+		free_list(list);
+		exit(1);
+	}
 	decide_sort(&list, &stack_b);
+	ft_printf("Sorted list:\n");
 	print_list(list);
+	ft_printf("%d \n", get_operations());
 	free_list(list);
 	return (0);
 }
-
-// int	main(int argc, char *argv[]) // voor selection sort
-// {
-// 	t_node	*list;
-// 	t_node	*stack_b;
-
-// 	list = NULL;
-// 	stack_b = NULL;	
-// 	list = parse_input(argc, argv);
-// 	ft_printf("Parsed input:\n");
-// 	print_list(list);
-// 	if (stack_size(list) < 50)
-// 	{
-// 		small_sort(&list, &stack_b);
-// 		ft_printf("After small sort (sorted values):\n");
-// 		print_list(list);
-// 	}
-// 	else
-// 	{
-// 		bubble_sort(&list); // make list ready for sorted indeces
-// 		ft_printf("After bubble sort (sorted values):\n");
-// 		print_list(list);
-// 		sorted_indices(list); // assign sorted indeces to list
-// 		ft_printf("With sorted indeces:\n");
-// 		print_list(list);
-// 		bubble_unsort(&list); // values back to original, normalized and ready for radix
-// 		ft_printf("After bubble unsort (back to original):\n");
-// 		print_list(list);
-// 		radix_sort(&list, &stack_b); // use operations to sort
-// 		ft_printf("After radix (sorted again):\n");
-// 		print_list(list);
-// 	}
-// 	free_list(list);
-// 	return (0);
-// }

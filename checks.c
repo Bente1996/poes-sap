@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 16:34:16 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:51:51 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,13 @@ void	decide_sort(t_node **stack_a, t_node **stack_b)
 
 	if (stack_a == NULL || *stack_a == NULL) // overbodig?
 		return;
-	if (stack_size(*stack_a) == 2) // GOED
+	if (stack_size(*stack_a) == 2)
 		two(stack_a);
-	else if (stack_size(*stack_a) == 3) // GOED
+	else if (stack_size(*stack_a) == 3)
 	 	three(stack_a);
-	// else if (stack_size(*stack_a) == 4 || stack_size(*stack_a) == 5) // segfault
-	//    	four_five(stack_a, stack_b);
-	else if (stack_size(*stack_a) > 3 && stack_size(*stack_a) < 51) // segfault
+	else if (stack_size(*stack_a) > 3 && stack_size(*stack_a) < 51)
 		selection_sort(stack_a, stack_b);
-	else                                           // GOED
+	else
 	{
 		bubble_sort(stack_a);
 		ft_printf("After bubble sort (sorted values):\n");
@@ -73,7 +71,13 @@ void	decide_sort(t_node **stack_a, t_node **stack_b)
 	}
 }
 
-// int	is_already_sorted()
-// {
-
-// }
+int	is_already_sorted(t_node *head)
+{
+	while (head)
+	{
+		if (head->value > head->next->value)
+			return(0);
+		head = head->next;
+	}
+	return (1);
+}

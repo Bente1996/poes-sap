@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 14:55:56 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 17:21:16 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 18:06:02 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	selection_sort(t_node **stack_a, t_node **stack_b)
 		move_smallest_to_top(stack_a);
 		pb(stack_a, stack_b);
 	}
-	three(stack_a);
 	while (*stack_b)
 		pa(stack_a, stack_b);
 }

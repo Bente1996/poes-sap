@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:37:09 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/26 15:20:17 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 18:28:05 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ typedef struct s_node
 t_node;
 
 int	main(int argc, char *argv[]);
+void count_operations(void);
+int get_operations(void);
 t_node *parse_input(int argc, char **argv);
+int	is_already_sorted(t_node *head);
 int has_duplicate(t_node *head, int value);
 int	is_number(char *str);
 t_node *new_node(int value,int index);
@@ -36,11 +39,9 @@ t_node *append_node(t_node **head, int value, int index);
 void	decide_sort(t_node **stack_a, t_node **stack_b);
 void	two(t_node **stack_a);
 void	three(t_node **stack_a);
-void	four_five(t_node **stack_a, t_node **stack_b);
 int	find_smallest(t_node *stack_a);
 void	move_smallest_to_top(t_node **stack_a);
 void	selection_sort(t_node **stack_a, t_node **stack_b);
-int	find_position(t_node **stack_a, t_node **stack_b);
 void bubble_sort(t_node **head);
 void swap_values(t_node *a, t_node *b);
 void sorted_indices(t_node *head);
