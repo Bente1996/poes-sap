@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:16:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/26 18:27:20 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:06:11 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,20 @@ void	three(t_node **stack_a)  // sa ra rra
 	}
 }
 
-void	four_five(t_node **stack_a, t_node **stack_b)
-{
-	if (*stack_a == NULL)
-		return;
-	print_list(*stack_a);
-	// while (stack_size(*stack_a) > 3)
-	// {
-	// 	move_smallest_to_top(stack_a);
-	// 	pb(stack_a, stack_b);
-	// }
-	three(stack_a);
-	while (*stack_b)
-		pa(stack_a, stack_b);
-}
+// void	four_five(t_node **stack_a, t_node **stack_b)
+// {
+// 	if (stack_a == NULL || *stack_a == NULL) // check nodig?
+// 		return;
+// 	print_list(*stack_a);
+// 	while (stack_size(*stack_a) > 3)
+// 	{
+// 		move_smallest_to_top(stack_a);
+// 		pb(stack_a, stack_b);
+// 	}
+// 	three(stack_a);
+// 	while (*stack_b)
+// 		pa(stack_a, stack_b);
+// }
 
 // void	four_five(t_node **stack_a, t_node **stack_b) // find smallest number, push to b (pb) (look whether closer to top or bottom) until a is empty, pa. 3 numbers: use three()
 // {

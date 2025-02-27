@@ -12,13 +12,16 @@ bubbles.c \
 utils.c
 
 OBJFILES := $(SRCFILES:.c=.o)
-CFLAGS ?= -Wall -Wextra -Werror -I./ft_printf/Libft -I./ft_printf ##-fsanitize=Address ???
+CFLAGS ?= -g -Wall -Wextra -Werror -I./ft_printf/Libft -I./ft_printf
 FT_PRINTF_A := ft_printf/libftprintf.a
 
 all : $(EXEC_NAME)
 
 run: $(EXEC_NAME)
 	./$(EXEC_NAME)
+
+valgrind: $(EXEC_NAME)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(EXEC_NAME) 435 4524 542524 5
 
 $(EXEC_NAME): $(OBJFILES) $(FT_PRINTF_A)
 	$(CC) $(OBJFILES) $(FT_PRINTF_A) $(CFLAGS) -o $(EXEC_NAME)

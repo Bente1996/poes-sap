@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 14:55:56 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/26 18:24:24 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:33:57 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	selection_sort(t_node **stack_a, t_node **stack_b)
 {
 	if (*stack_a == NULL)
 		return;
-	while (*stack_a) // move smallest numbers to b
+	while (stack_size(*stack_a) > 3) // move smallest numbers to b
 	{
 		move_smallest_to_top(stack_a);
 		pb(stack_a, stack_b);

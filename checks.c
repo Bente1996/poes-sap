@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/26 18:34:39 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:34:16 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,15 @@ void	decide_sort(t_node **stack_a, t_node **stack_b)
 {
 	printf("Stack size: %d\n", stack_size(*stack_a));
 
-	stack_b = NULL;
-	if (*stack_a == NULL) // overbodig?
+	if (stack_a == NULL || *stack_a == NULL) // overbodig?
 		return;
 	if (stack_size(*stack_a) == 2) // GOED
 		two(stack_a);
 	else if (stack_size(*stack_a) == 3) // GOED
 	 	three(stack_a);
-	else if (stack_size(*stack_a) == 4 || stack_size(*stack_a) == 5) // segfault
-	   	four_five(stack_a, stack_b);
-	else if (stack_size(*stack_a) > 5 && stack_size(*stack_a) < 51) // segfault
+	// else if (stack_size(*stack_a) == 4 || stack_size(*stack_a) == 5) // segfault
+	//    	four_five(stack_a, stack_b);
+	else if (stack_size(*stack_a) > 3 && stack_size(*stack_a) < 51) // segfault
 		selection_sort(stack_a, stack_b);
 	else                                           // GOED
 	{
