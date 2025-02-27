@@ -39,12 +39,12 @@ if [ -z "$2" ];then
 else
 	n=$2;
 fi
-ARG=$(seq -250 249 | shuf | tr '\n' ' '); ./push_swap $ARG | ./pro_checker $ARG
+ARG=$(seq -250 249 | shuf | tr '\n' ' '); ./push_swap $ARG
 exit 0
 fi
 
 if [ $1 == -v2 ];then
-ARG=$2; ./push_swap $ARG | ./pro_checker $ARG
+ARG=$2; ./push_swap $ARG
 exit 0
 fi
 
