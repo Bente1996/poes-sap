@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:37:09 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 18:28:05 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:00:54 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ typedef struct s_node
 t_node;
 
 int	main(int argc, char *argv[]);
-void count_operations(void);
-int get_operations(void);
+int count_operations();
 t_node *parse_input(int argc, char **argv);
 int	is_already_sorted(t_node *head);
 int has_duplicate(t_node *head, int value);

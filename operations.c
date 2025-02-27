@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 18:23:47 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 18:48:23 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,3 +101,4 @@ void rra(t_node **stack_a)
 	ft_printf("rra \n");
 	count_operations();
 }
+

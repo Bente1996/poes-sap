@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 17:51:51 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/02/27 19:03:51 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	is_number(char *str)
 
 void	decide_sort(t_node **stack_a, t_node **stack_b)
 {
-	printf("Stack size: %d\n", stack_size(*stack_a));
+	printf("Stack size: %d\n\n", stack_size(*stack_a));
 
 	if (stack_a == NULL || *stack_a == NULL) // overbodig?
 		return;
