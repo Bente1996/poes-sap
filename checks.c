@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 19:03:51 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/18 16:26:39 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	is_number(char *str)
 
 void	decide_sort(t_node **stack_a, t_node **stack_b)
 {
-	printf("Stack size: %d\n\n", stack_size(*stack_a));
+	// printf("Stack size: %d\n\n", stack_size(*stack_a));
 
 	if (stack_a == NULL || *stack_a == NULL) // overbodig?
 		return;
@@ -56,17 +56,13 @@ void	decide_sort(t_node **stack_a, t_node **stack_b)
 	else
 	{
 		bubble_sort(stack_a);
-		ft_printf("After bubble sort (sorted values):\n");
-		print_list(*stack_a);
+		// print_list(*stack_a, "After bubble sort (sorted values):");
 		sorted_indices(*stack_a); // assign sorted indeces to list
-		ft_printf("With sorted indeces:\n");
-		print_list(*stack_a);
+		// print_list(*stack_a, "With sorted indeces:");
 		bubble_unsort(stack_a); // values back to original, normalized and ready for radix
-		ft_printf("After bubble unsort (back to original):\n");
-		print_list(*stack_a);
+		//print_list(*stack_a, "After bubble unsort (back to original):");
 		radix_sort(stack_a, stack_b); // use operations to sort
-		ft_printf("After radix (sorted again):\n");
-		print_list(*stack_a);
+		// print_list(*stack_a, "After radix (sorted again):");
 		radix_sort(stack_a, stack_b);
 	}
 }

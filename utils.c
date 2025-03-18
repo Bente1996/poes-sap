@@ -6,14 +6,15 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:29 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 19:47:47 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:30:40 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_list(t_node *head)
+void	print_list(t_node *head, char *str)
 {
+	ft_printf("%s\n", str);
 	while (head)
 	{
 		ft_printf("Value: %d, Index: %d Sorted Index: %d\n", head->value, head->index, head->sorted_index);

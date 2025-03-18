@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:37:09 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 19:00:54 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:31:00 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void pb(t_node **stack_a, t_node **stack_b);
 void sa(t_node **stack_a);
 void	ra(t_node **stack_a);
 void	rra(t_node **stack_a);
-void print_list(t_node *head);
+void	print_list(t_node *head, char *str);
 void free_list(t_node *head);
 
 #endif

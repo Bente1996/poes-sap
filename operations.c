@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/02/27 19:47:18 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/18 15:07:02 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void pa(t_node **stack_a, t_node **stack_b) // put first element B on top of A
 	*stack_b = (*stack_b)->next; // Move B's head forward
 	temp->next = *stack_a;		 // Attach B's old head to A
 	*stack_a = temp;			 // A's head now points to the new node
-	ft_printf("pa \n");
+	ft_printf("pa\n");
 	count_operations();
 }
 
@@ -45,7 +45,7 @@ void pb(t_node **stack_a, t_node **stack_b) // put first element A on top of B
 		temp->next = *stack_b; // Attach old head of A to stack B
 		*stack_b = temp;	   // Move stack B head to new node
 	}
-	ft_printf("pb \n");
+	ft_printf("pb\n");
 	count_operations();
 }
 
@@ -59,7 +59,7 @@ void sa(t_node **stack_a)
 	first->next = second->next;
 	second->next = (*stack_a);
 	*stack_a = second;
-	ft_printf("sa \n");
+	ft_printf("sa\n");
 	count_operations();
 }
 
@@ -77,7 +77,7 @@ void ra(t_node **stack_a)
 	*stack_a = first->next; // make new head
 	last->next = first;
 	first->next = NULL;
-	ft_printf("ra \n");
+	ft_printf("ra\n");
 	count_operations();
 }
 
@@ -98,7 +98,7 @@ void rra(t_node **stack_a)
 	second_last->next = NULL;
 	last->next = *stack_a;
 	*stack_a = last;
-	ft_printf("rra \n");
+	ft_printf("rra\n");
 	count_operations();
 }
 
