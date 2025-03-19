@@ -6,23 +6,22 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/18 16:26:39 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/19 14:49:07 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //boolians?
-
-int has_duplicate(t_node *head, int value) // head points to first node
+int	is_already_sorted(t_node *head)
 {
-	while (head)
+	while (head->next)
 	{
-		if (head->value == value) // check value in node with given value, move through whole list
-			return (1); // Duplicate found
+		if (head->value > head->next->value)
+			return(0);
 		head = head->next;
 	}
-	return (0); // No duplicates
+	return (1);
 }
 
 int	is_number(char *str)
@@ -39,6 +38,17 @@ int	is_number(char *str)
 		i++;
 	}
 	return (1);
+}
+
+int has_duplicate(t_node *head, int value) // head points to first node
+{
+	while (head)
+	{
+		if (head->value == value) // check value in node with given value, move through whole list
+			return (1); // Duplicate found
+		head = head->next;
+	}
+	return (0); // No duplicates
 }
 
 void	decide_sort(t_node **stack_a, t_node **stack_b)
@@ -63,17 +73,5 @@ void	decide_sort(t_node **stack_a, t_node **stack_b)
 		//print_list(*stack_a, "After bubble unsort (back to original):");
 		radix_sort(stack_a, stack_b); // use operations to sort
 		// print_list(*stack_a, "After radix (sorted again):");
-		radix_sort(stack_a, stack_b);
 	}
-}
-
-int	is_already_sorted(t_node *head)
-{
-	while (head)
-	{
-		if (head->value > head->next->value)
-			return(0);
-		head = head->next;
-	}
-	return (1);
 }
