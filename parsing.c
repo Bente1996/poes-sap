@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:51 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/20 09:53:12 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/20 15:52:12 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_node	*parse_input(int argc, char **argv)
 	stack_a = NULL;
 	while (i < argc)
 	{
-		if (is_number(argv[i]) == 1)
+		if (is_number(argv[i]) == 1 && !(*argv[0] == '0' && *argv[1] != '\0'))
 		{
 			if (!append_node(&stack_a, ft_atoi(argv[i]), i - 1))
 			{

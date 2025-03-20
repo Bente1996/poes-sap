@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/20 10:42:21 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/20 16:00:32 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	decide_sort(&list, &stack_b);
+	//print_list(list, "Sorted:");
 	free_list(list);
 	return (0);
 }

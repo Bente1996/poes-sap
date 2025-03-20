@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/19 16:58:19 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/20 15:56:04 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int	is_number(char *str)
 	int	i;
 
 	i = 0;
+	if (str[i] == '-')
+		i++;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '-' || str[i] == '+')
-			i++;
 		if (str[i] < '0' || str[i] > '9')
 			return (0);
 		i++;
