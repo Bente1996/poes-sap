@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 20:19:28 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/20 13:54:56 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/20 14:15:12 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,6 @@ long long	convert_to_int(const char *str, int i, long long result, int sign)
 			ft_printf("Error\n");
 			exit(1);
 		}
-		if (result > INT_MAX - 1 && sign == -1)
-		{
-			ft_printf("Error\n");
-			exit(1);
-		}
 		i++;
 	}
 	return (result);
@@ -68,7 +63,6 @@ int	ft_atoi(const char *str)
 	result = 0;
 	i = skip_spaces(str);
 	sign = has_sign(str, i);
-	ft_printf("%d\n", sign);
 	if (sign == -1)
 		i++;
 	result = convert_to_int(str, i, result, sign);
