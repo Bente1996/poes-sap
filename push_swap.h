@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:37:09 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/18 14:31:00 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/20 14:04:14 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 #include <limits.h>
 # include <stdio.h>
-# include "ft_printf/Libft/libft.h"
-# include "ft_printf/ft_printf.h"
+# include "libft.h"
+# include "ft_printf.h"
 
 typedef struct s_node
 {

@@ -1,5 +1,5 @@
 EXEC_NAME := push_swap
-HEADERFILES := ft_printf/Libft/libft.h ft_printf/ft_printf.h push_swap.h
+HEADERFILES := Libft/libft.h Libft/ft_printf.h push_swap.h
 SRCFILES := main.c \
 parsing.c \
 nodes.c \
@@ -12,8 +12,8 @@ bubbles.c \
 utils.c
 
 OBJFILES := $(SRCFILES:.c=.o)
-CFLAGS ?= -g -Wall -Wextra -Werror -I./ft_printf/Libft -I./ft_printf
-FT_PRINTF_A := ft_printf/libftprintf.a
+CFLAGS ?= -g -Wall -Wextra -Werror -I./Libft
+LIBFT_A := Libft/libft.a
 
 all : $(EXEC_NAME)
 
@@ -23,18 +23,18 @@ run: $(EXEC_NAME)
 valgrind: $(EXEC_NAME)
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(EXEC_NAME) 3 2 1 
 
-$(EXEC_NAME): $(OBJFILES) $(FT_PRINTF_A)
-	$(CC) $(OBJFILES) $(FT_PRINTF_A) $(CFLAGS) -o $(EXEC_NAME)
+$(EXEC_NAME): $(OBJFILES) $(LIBFT_A)
+	$(CC) $(OBJFILES) $(LIBFT_A) $(CFLAGS) -o $(EXEC_NAME)
 
 %.o: %.c $(HEADERFILES)
 	cc $(CFLAGS) -c $<
 
-$(FT_PRINTF_A):
-	$(MAKE) -C ft_printf
+$(LIBFT_A):
+	$(MAKE) -C Libft
 
 clean:
 	rm -f $(OBJFILES)
-	$(MAKE) -C ft_printf clean
+	$(MAKE) -C Libft clean
 
 fclean: clean
 	rm -f $(EXEC_NAME)

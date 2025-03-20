@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:29 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/18 14:30:40 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/19 17:18:12 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@ void	print_list(t_node *head, char *str)
 	ft_printf("%s\n", str);
 	while (head)
 	{
-		ft_printf("Value: %d, Index: %d Sorted Index: %d\n", head->value, head->index, head->sorted_index);
+		ft_printf("Value: %d, Index: %d Sorted Index: %d\n", \
+		head->value, head->index, head->sorted_index);
 		head = head->next;
 	}
 	ft_printf("\n");
 }
 
-void free_list(t_node *head)
+void	free_list(t_node *head)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	while (head)
 	{
@@ -48,11 +49,10 @@ int	stack_size(t_node *stack_a)
 	return (size);
 }
 
-int count_operations(void)
+int	count_operations(void)
 {
-	static int operation_count;
-	
+	static int	operation_count;
+
 	operation_count++;
 	return (operation_count);
 }
-
