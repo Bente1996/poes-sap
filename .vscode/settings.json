@@ -11,6 +11,7 @@
 		"push_swap.h": "c",
 		"*.tcc": "c",
 		"string": "c",
-		"string_view": "c"
+		"string_view": "c",
+		"libft.h": "c"
 	}
 }

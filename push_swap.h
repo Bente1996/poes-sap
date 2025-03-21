@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:37:09 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/20 14:39:53 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/21 18:54:01 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 typedef struct s_node
 {
 	int				value;
-	size_t			index;
-	ssize_t			sorted_index;
+	int				index;
+	int				sorted_index;
 	struct s_node	*next;
 }	t_node;
 
@@ -41,10 +41,9 @@ int		find_smallest(t_node *stack_a);
 void	move_smallest_to_top(t_node **stack_a);
 void	selection_sort(t_node **stack_a, t_node **stack_b);
 void	bubble_sort(t_node **head);
-void	swap_values(t_node *a, t_node *b);
+void	swap_ints(int *a, int *b);
 void	sorted_indices(t_node *head);
 void	bubble_unsort(t_node **head);
-void	swap_sorted_indeces(t_node *a, t_node *b);
 void	radix_sort(t_node **stack_a, t_node **stack_b);
 int		find_max_bits(t_node *stack_a);
 int		stack_size(t_node *stack_a);
