@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:16:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/19 17:00:24 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/21 18:03:24 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 void	two(t_node **stack_a)
 {
-	if (*stack_a == NULL)
-		return ;
 	if ((*stack_a)->value > (*stack_a)->next->value)
 		sa(stack_a);
 }
 
 void	three(t_node **stack_a)
 {
-	if (*stack_a == NULL)
-		return ;
 	if (((*stack_a)->value > (*stack_a)->next->value) && \
 		((*stack_a)->next->value > (*stack_a)->next->next->value))
 	{

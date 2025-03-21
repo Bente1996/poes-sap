@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:02:15 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/19 16:56:11 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/21 18:41:20 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	bubble_sort(t_node **head)
 	int		swapped;
 
 	sorted = NULL;
-	if (*head == NULL)
-		return ;
 	swapped = 1;
 	while (swapped == 1)
 	{
@@ -46,8 +44,6 @@ void	bubble_unsort(t_node **head)
 	int		swapped;
 
 	sorted = NULL;
-	if (*head == NULL)
-		return ;
 	swapped = 1;
 	while (swapped == 1)
 	{
@@ -69,35 +65,34 @@ void	bubble_unsort(t_node **head)
 
 void	swap_sorted_indeces(t_node *a, t_node *b)
 {
-	t_node	*temp;
+	int	temp;
 
-	if (a == NULL || b == NULL)
-		return ;
-	temp = malloc(sizeof(t_node));
-	if (temp == NULL)
-		return ;
-	temp->sorted_index = a->sorted_index;
+	temp = a->sorted_index;
 	a->sorted_index = b->sorted_index;
-	b->sorted_index = temp->sorted_index;
-	free(temp);
+	b->sorted_index = temp;
 }
+
+void	swap_ints(int *a, int *b)
+{
+	int	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+swap_ints(&compare->index, &compare->next->index);
 
 void	swap_values(t_node *a, t_node *b)
 {
-	t_node	*temp;
+	int	temp;
 
-	if (a == NULL || b == NULL)
-		return ;
-	temp = malloc(sizeof(t_node));
-	if (temp == NULL)
-		return ;
-	temp->value = a->value;
+	temp = a->value;
 	a->value = b->value;
-	b->value = temp->value;
-	temp->index = a->index;
+	b->value = temp;
+	temp = a->index;
 	a->index = b->index;
-	b->index = temp->index;
-	free(temp);
+	b->index = temp;;
 }
 
 void	sorted_indices(t_node *head)

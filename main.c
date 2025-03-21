@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:11 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/20 16:00:32 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/21 17:51:15 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int	main(int argc, char *argv[])
 	t_node	*stack_b;
 
 	stack_b = NULL;
-	list = parse_input(argc, argv);
-	if (list == NULL)
-		return (1);
 	if (argc < 3)
 	{
 		ft_printf("Error\n");
-		exit(1);
+		return(1);
 	}
+	list = parse_input(argc, argv);
+	if (list == NULL)
+		return (1);
 	if (is_already_sorted(list) == 1)
 	{
 		ft_printf("Error\n");
@@ -33,7 +33,6 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	decide_sort(&list, &stack_b);
-	//print_list(list, "Sorted:");
 	free_list(list);
 	return (0);
 }

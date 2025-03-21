@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:00:35 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/20 15:56:04 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/21 18:08:25 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ int	has_duplicate(t_node *head, int value)
 
 void	decide_sort(t_node **stack_a, t_node **stack_b)
 {
-	if (stack_a == NULL || *stack_a == NULL)
-		return ;
 	if (stack_size(*stack_a) == 2)
 		two(stack_a);
 	else if (stack_size(*stack_a) == 3)

@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:51 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/20 15:52:12 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/21 17:51:13 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ t_node	*parse_input(int argc, char **argv)
 	stack_a = NULL;
 	while (i < argc)
 	{
-		if (is_number(argv[i]) == 1 && !(*argv[0] == '0' && *argv[1] != '\0'))
+		if (is_number(argv[i]) == 1)
 		{
-			if (!append_node(&stack_a, ft_atoi(argv[i]), i - 1))
+			if (append_node(&stack_a, ft_atoi(argv[i]), i - 1) == NULL)
 			{
 				free_list(stack_a);
 				return (NULL);
@@ -34,8 +34,8 @@ t_node	*parse_input(int argc, char **argv)
 		}
 		else
 		{
-			ft_printf("Error\n", argv[i]);
-			exit(1);
+			ft_printf("Error\n");
+			return (NULL);
 		}
 	}
 	return (stack_a);
