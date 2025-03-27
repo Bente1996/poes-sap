@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:51 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/21 17:51:13 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/27 14:48:48 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ t_node	*parse_input(int argc, char **argv)
 {
 	t_node	*stack_a;
 	int		i;
-	int		value;
 
 	i = 1;
-	value = 0;
 	stack_a = NULL;
 	while (i < argc)
 	{

@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 20:19:28 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/21 18:58:33 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/27 14:52:14 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,10 @@ int	has_sign(const char *str, int i)
 	int	sign;
 
 	sign = 1;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
 	return (sign);
@@ -62,7 +63,7 @@ int	ft_atoi(const char *str)
 	result = 0;
 	i = skip_spaces(str);
 	sign = has_sign(str, i);
-	if (sign == -1)
+	if (sign)
 		i++;
 	result = convert_to_int(str, i, result, sign);
 	result *= sign;
