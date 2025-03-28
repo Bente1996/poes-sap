@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:01:51 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/27 14:48:48 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/28 19:26:51 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_node	*parse_input(int argc, char **argv)
 		else
 		{
 			ft_printf("Error\n");
+			free_list(stack_a);
 			return (NULL);
 		}
 	}

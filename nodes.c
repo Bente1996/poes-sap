@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:06:24 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/21 18:32:00 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/28 19:27:30 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ t_node	*append_node(t_node **head, int value, int index)
 
 	new = new_node(value, index);
 	if (new == NULL)
-		return(NULL);
+		return (NULL);
 	if (has_duplicate(*head, value))
 	{
+		free(new);
 		ft_printf("Error\n");
-		return(NULL);
+		return (NULL);
 	}
 	if (*head == NULL)
 		*head = new;

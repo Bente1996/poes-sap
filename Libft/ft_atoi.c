@@ -6,7 +6,7 @@
 /*   By: bde-koni <bde-koni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 20:19:28 by bde-koni          #+#    #+#             */
-/*   Updated: 2025/03/27 14:52:14 by bde-koni         ###   ########.fr       */
+/*   Updated: 2025/03/28 19:26:02 by bde-koni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,19 @@ int	skip_spaces(const char *str)
 	return (i);
 }
 
-int	has_sign(const char *str, int i)
+int	has_sign(const char *str)
 {
 	int	sign;
+	int	i;
 
-	sign = 1;
+	sign = 0;
+	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign = -1;
-		i++;
+		else
+			sign = 1;
 	}
 	return (sign);
 }
@@ -43,7 +46,8 @@ long long	convert_to_int(const char *str, int i, long long result, int sign)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
-		if (result > INT_MAX && (sign == 1))
+		if ((result > INT_MAX && ((sign == 0) || (sign == 1))) \
+		|| (result * -1 < INT_MIN && (sign == -1)))
 		{
 			ft_printf("Error\n");
 			exit(1);
@@ -62,16 +66,12 @@ int	ft_atoi(const char *str)
 
 	result = 0;
 	i = skip_spaces(str);
-	sign = has_sign(str, i);
+	sign = has_sign(str);
 	if (sign)
 		i++;
 	result = convert_to_int(str, i, result, sign);
-	result *= sign;
-	if (result < INT_MIN)
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
+	if (sign == -1)
+		result *= sign;
 	return ((int)result);
 }
 
